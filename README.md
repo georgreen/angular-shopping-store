@@ -1,28 +1,103 @@
-# ShoppingList
+#  Ecomerce App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- To run on local machine git clone this project :
+```
+ $ git clone
+ ```
 
-## Build
+ Copy and paste the above command in your terminal, the project will be downloaded to your local machine.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+- Visit this url to view hosted app
+ ```
+ comming soon....
+ ```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+The application is built using Type Script: Angular 2 framework.
+>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
+To Install Angular 2 checkout:
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+
+
+### Installing
+
+For this section I will assume you have Angular 2 and it's configured on your machine. </br>
+Navigate to the folder you cloned and run: </br>
+
+- Install Requirements
+```
+$
+```
+
+- Configure Environment.
+```
+
+```
+> Note replace the value for DEV_DATABASE with real database path and SECRET with a strong string value
+
+
+- Run App ‍
+```
+
+```
+The app should be accessiable via :
+
+
+## Running the tests
+
+```
+
+```
+- With Coverage
+
+```
+
+```
+
+- Coding style tests
+
+
+
+```
+
+```
+
+## Deployment  
+
+- [Check this out to deploy to heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+
+## Built With   
+
+*
+*
+## Contributing
+
+- Please Fork me! :-)
+
+## Versioning
+
+- comming soon
+
+## Authors
+
+- comming soon
+
+## License
+
+- This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments    
+
+* [comming soon](https://www.youtube.com/watch?v=dQw4w9WgXcQ) - BEST RESOURCE EVER!!!
