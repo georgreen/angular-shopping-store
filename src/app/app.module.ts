@@ -2,16 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
 import { RouterModule} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomFormsModule } from 'ng2-validation';
+import { DataTableModule } from 'angular-4-data-table';
 
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { UserService } from './user.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
+import { CategoryService } from './category.service';
+import { ProductService } from './product.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -25,6 +30,7 @@ import { AdminOdersComponent } from './admin/admin-oders/admin-oders.component';
 import { LoginComponent } from './login/login.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +45,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AdminOdersComponent,
     LoginComponent,
     AdminProductsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    CustomFormsModule,
+    DataTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -71,17 +81,26 @@ import { NotFoundComponent } from './not-found/not-found.component';
         canActivate: [AuthGuardService, AdminAuthGuardService]
       },
       {
+        path: 'admin/products/new', component: ProductFormComponent,
+        canActivate: [AuthGuardService, AdminAuthGuardService]
+      },
+      {
+        path: 'admin/products/:id', component: ProductFormComponent,
+        canActivate: [AuthGuardService, AdminAuthGuardService]
+      },
+      {
         path: 'admin/products', component: AdminProductsComponent,
         canActivate: [AuthGuardService, AdminAuthGuardService]
       },
-
       {path: '**', component: NotFoundComponent},]),
   ],
   providers: [
     AuthService,
     AuthGuardService,
     UserService,
-    AdminAuthGuardService
+    AdminAuthGuardService,
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

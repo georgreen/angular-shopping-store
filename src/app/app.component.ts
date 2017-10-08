@@ -13,15 +13,17 @@ export class AppComponent {
 
   constructor(private router: Router, private auth: AuthService, private userService: UserService) {
     auth.user$.subscribe( user => {
-      if (user) {
-        this.userService.save(user);
-        
-        let url = localStorage.getItem('returnUrl');
+      if (!user) {
+        return;
+      }
+      this.userService.save(user);
+      const url = localStorage.getItem('returnUrl');
+
+      if (url) {
+        localStorage.removeItem('returnUrl');
         router.navigateByUrl(url);
       }
-      else {
-          router.navigateByUrl('/');
-      }
+
     });
   }
 }
