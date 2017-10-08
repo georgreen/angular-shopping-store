@@ -9,7 +9,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomFormsModule } from 'ng2-validation';
-import { DataTableModule } from 'angular-4-data-table';
+import { DataTableModule } from 'angular-4-data-table/src/index';
 
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
@@ -31,6 +31,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { FilterComponent } from './products/filter/filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     LoginComponent,
     AdminProductsComponent,
     NotFoundComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    FilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      {path: '', component: HomeComponent},
+      { path: '', component: ProductsComponent},
       {path: 'products', component: ProductsComponent},
       {path: 'shopping-cart', component: ShoppingCartComponent},
       {path: 'login', component: LoginComponent},
@@ -92,7 +96,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
         path: 'admin/products', component: AdminProductsComponent,
         canActivate: [AuthGuardService, AdminAuthGuardService]
       },
-      {path: '**', component: NotFoundComponent},]),
+      {path: '**', component: NotFoundComponent}, ]),
   ],
   providers: [
     AuthService,
